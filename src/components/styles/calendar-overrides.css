@@ -1,0 +1,20 @@
+.rbc-toolbar button {
+  color: #262626; /* text-neutral-800 */
+  transition-property: color;
+  transition-duration: 150ms;
+}
+
+.rbc-toolbar button:hover {
+  color: #262626; /* text-blue-600 */
+}
+
+@media (prefers-color-scheme: dark) {
+  .rbc-toolbar button {
+    color: #fff; /* dark:text-white */
+  }
+}
+
+.rbc-toolbar button.rbc-active {
+  font-weight: 600; /* font-semibold */
+  color: #262626; /* text-blue-600 */
+}
