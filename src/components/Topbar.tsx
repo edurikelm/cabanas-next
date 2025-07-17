@@ -3,7 +3,7 @@ export default function Topbar() {
     <header className="navbar flex items-center justify-between bg-base-200 border-b border-base-300 px-4">
           <div className="flex items-center gap-2">
             <label
-              htmlFor="dashboard-drawer"
+              htmlFor="my-drawer-2"
               className="btn btn-square btn-ghost lg:hidden"
             >
               <svg

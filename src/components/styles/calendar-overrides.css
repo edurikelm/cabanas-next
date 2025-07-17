@@ -10,11 +10,20 @@
 
 @media (prefers-color-scheme: dark) {
   .rbc-toolbar button {
-    color: #fff; /* dark:text-white */
+    color: #262626; /* dark:text-white */
   }
 }
 
 .rbc-toolbar button.rbc-active {
   font-weight: 600; /* font-semibold */
   color: #262626; /* text-blue-600 */
+}
+
+.rbc-header {
+  background-color: #f3f4f6; /* bg-neutral-100 */
+  color: #262626; /* text-neutral-800 */
+}
+
+.rbc-toolbar-label {
+  color: #262626; /* text-neutral-800 */
 }

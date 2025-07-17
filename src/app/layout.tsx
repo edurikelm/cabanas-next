@@ -32,25 +32,6 @@ export default function RootLayout({
         <div className="drawer lg:drawer-open">
           <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
           <div className="drawer-content flex flex-col items-center justify-start bg-gray-100 dark:bg-base-100">
-            <label
-              htmlFor="my-drawer-2"
-              className="btn btn-ghost drawer-button lg:hidden"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h7"
-                />
-              </svg>
-            </label>
             <Topbar />
             {children}
           </div>
