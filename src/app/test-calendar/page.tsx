@@ -29,7 +29,7 @@ const CABANAS: cabanasTipo[] = [
   { value: 'Regional Cuatro', color: '#8b5cf6' }, // violet-500
   { value: 'Teja Uno', color: '#f59e0b' }, // amber-500
   { value: 'Teja Dos', color: '#ef4444' }, // red-500
-  { value: 'Teja Tres', color: '#d10ef8' }, // cyan-500
+  { value: 'Teja Tres', color: '#06b6d4' }, // cyan-500
 ];
 
 export default function TestCalendar() {
@@ -38,8 +38,8 @@ export default function TestCalendar() {
     if (!response.ok) {
       throw new Error('Error fetching events');
     }
-    const data = await response.json();
-    const eventsRes = data.map((event: any) => ({
+    const data: Arriendo[] = await response.json();
+    const eventsRes = data.map((event) => ({
       ...event,
       start: new Date(event.start),
       end: new Date(event.end),
@@ -47,7 +47,7 @@ export default function TestCalendar() {
     setEvents(eventsRes);
   };
 
-  const [events, setEvents] = useState<any[]>([]);
+  const [events, setEvents] = useState<Arriendo[]>([]);
 
   useEffect(() => {
     fetchEvents();

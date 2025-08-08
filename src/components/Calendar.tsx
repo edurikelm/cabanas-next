@@ -23,7 +23,7 @@ const CABANAS: cabanasTipo[] = [
   { value: 'Regional Cuatro', color: '#8b5cf6' }, // violet-500
   { value: 'Teja Uno', color: '#f59e0b' }, // amber-500
   { value: 'Teja Dos', color: '#ef4444' }, // red-500
-  { value: 'Teja Tres', color: '#d10ef8' }, // cyan-500
+  { value: 'Teja Tres', color: '#06b6d4' }, // cyan-500
 ];
 
 export default function CalendarComponent({
