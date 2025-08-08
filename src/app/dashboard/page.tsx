@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function Dashboard() {
   return (
     <div className="drawer lg:drawer-open bg-base-100">

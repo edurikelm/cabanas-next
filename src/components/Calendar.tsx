@@ -6,8 +6,10 @@ import { Arriendo } from '@/types/arriendos';
 import { motion } from 'framer-motion';
 
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-import './styles/calendar-overrides.css';
 import CalendarFilter from './ui/CalendarFilter';
+import { Button } from './ui/Button';
+import { Modal } from './ui/Modal';
+import { useEffect, useState } from 'react';
 
 type cabanasTipo = {
   value: Arriendo['cabana'];
@@ -22,16 +24,42 @@ const CABANAS: cabanasTipo[] = [
   { value: 'Teja Uno', color: '#f59e0b' }, // amber-500
   { value: 'Teja Dos', color: '#ef4444' }, // red-500
   { value: 'Teja Tres', color: '#d10ef8' }, // cyan-500
-]
+];
 
 export default function CalendarComponent({
-  eventos,
+  eventos, recargarEventos,
 }: {
   eventos: Arriendo[];
+  recargarEventos: () => void; // Agrega esta propiedad opcional
 }) {
+
+  const [openModal, setOpenModal] = useState(false);   
+
+  useEffect(() => {
+  console.log('Calendar mounted');
+}, []);
+
+
   return (
     <>
       <CalendarFilter cabanas={CABANAS} />
+      <Button
+        className="btn btn-primary"
+        onClick={() => setOpenModal(true)}
+      >
+        Abrir Modal
+      </Button>
+
+      <Modal
+        modalId="my_modal"
+        title="Modal"
+        open={openModal}
+        setOpenModal={setOpenModal}
+        recargarEventos={recargarEventos}
+      >
+        Este es el modal
+      </Modal>
+      
       <div className="shadow-xl p-4 bg-white border border-neutral-200 dark:border-neutral-800 h-[700px]">
         <Calendar
           popup={false}
@@ -52,9 +80,9 @@ export default function CalendarComponent({
             day: 'Día',
           }}
           eventPropGetter={(event) => {
-            const backgroundColor = CABANAS.find(
-              (c) => c.value === event.cabana
-            )?.color || 'bg-gray-500';
+            const backgroundColor =
+              CABANAS.find((c) => c.value === event.cabana)?.color ||
+              'bg-gray-500';
             return {
               style: {
                 backgroundColor: backgroundColor,

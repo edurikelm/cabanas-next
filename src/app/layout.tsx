@@ -39,7 +39,7 @@ export default function RootLayout({
             <label
               htmlFor="my-drawer-2"
               aria-label="close sidebar"
-              className="drawer-overlay"
+              className="drawer-overlay lg:hidden"
             ></label>
             <Sidebar />
           </div>

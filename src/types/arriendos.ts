@@ -8,7 +8,7 @@ export type Arriendo = {
   descuento:boolean;
   end: string | Date;
   start: string | Date;
-  pago: boolean;
+  pago?: boolean;
   title: string;
   valorNoche: number;
   valorTotal: number;
